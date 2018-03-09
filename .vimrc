@@ -17,6 +17,10 @@ set backupdir=~/.vim-backups
 let backupvar = "set backupext=~" . strftime("%Y-%m-%d-%H:%m:%S")
 execute backupvar
 
+" Use that ~/.vim-backups dir for swapfiles too
+set swapfile
+set dir=~/.vim-backups
+
 " Search options: incremental search, highlight search
 set hlsearch
 set incsearch
@@ -41,6 +45,22 @@ Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim'
 Plug 'schickling/vim-bufonly'
 Plug 'w0rp/ale'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 silent! colorscheme dracula
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+
+let b:ale_fixers = [
+\  'trim_whitespace',
+\  'remove_trailing_lines',
+\]
+
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
+let g:ale_set_highlights = 0
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)

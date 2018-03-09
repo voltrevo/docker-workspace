@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim'
 Plug 'schickling/vim-bufonly'
+Plug 'w0rp/ale'
 call plug#end()
 
 silent! colorscheme dracula

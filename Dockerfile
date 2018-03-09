@@ -5,8 +5,13 @@ RUN apt-get update && apt-get install -y \
     wget \
     git \
     vim \
-    zsh
+    zsh \
+    tmux
 
-RUN chsh -s /bin/zsh
+ADD ./docker-workspace-init.sh /tmp/.
+RUN /tmp/docker-workspace-init.sh
 
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+ADD .vimrc /root/.vimrc
+ADD .zshrc /root/.zshrc
+
+RUN vim +PlugInstall +qall

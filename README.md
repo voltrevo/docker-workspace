@@ -8,7 +8,7 @@ Docker solution for isolated ubuntu developer workspaces with lots of goodies.
 
 1. Install [Chocolatey](https://chocolatey.org/)
 2. `choco install cmder`
-3. `choco install docker-for-windows`
+3. If you have windows 10 pro, `choco install docker-for-windows`, otherwise `choco install docker-toolbox`
 4. Install [git for windows](https://gitforwindows.org/)
 5. `git clone https://github.com/voltrevo/docker-workspace.git`
 6. `cd docker-workspace`

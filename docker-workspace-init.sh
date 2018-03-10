@@ -1,16 +1,19 @@
 # zsh
 chsh -s /bin/zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-rm -f ~/.zsh_history
-ln -s /docker-workspace-share/.zsh_history ~/.zsh_history
+rm -f /root/.zsh_history
+ln -s /root/.config/docker-workspace/.zsh_history /root/.zsh_history
+
+# git
+ln -s /root/.config/docker-workspace/.gitconfig /root/.gitconfig
 
 # ssh
-ln -s /docker-workspace-share/.ssh ~/.ssh
+ln -s /root/.config/docker-workspace/.ssh /root/.ssh
 
 # vim
-mkdir ~/.vim-backups
+mkdir /root/.vim-backups
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo /root/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # nodejs

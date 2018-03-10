@@ -100,4 +100,10 @@ export NVM_DIR="$HOME/.nvm"
 alias v=vim
 export TERM=xterm-256color
 
+if [ -d /root/.config/docker-workspace ] && [ ! -f /root/.config/docker-workspace/.init ]; then
+  touch /root/.config/docker-workspace/.init
+  touch /root/.config/docker-workspace/.zsh_history
+  touch /root/.config/docker-workspace/.gitconfig
+fi
+
 cd

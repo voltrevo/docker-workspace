@@ -8,7 +8,8 @@ RUN apt-get install -y \
     git \
     vim \
     zsh \
-    tmux
+    tmux \
+    default-jdk
 
 ADD ./docker-workspace-init.sh /tmp/.
 RUN /tmp/docker-workspace-init.sh

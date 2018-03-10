@@ -17,7 +17,7 @@ Docker solution for isolated ubuntu developer workspaces with lots of goodies.
 9. Pin cmder on taskbar (right click cmder icon down the bottom -> pin to taskbar)
 10. Right click cmder *titlebar* -> Settings...
 11. Startup -> Tasks -> Click `+`
-12. Call it docker-workspace and copy `runcmd` (from this repo) into the commands box
+12. Call it docker-workspace and copy the contents of `runcmd` (from this repo) into the commands box
 13. Click `Up` until `{docker-workspace}` is on top
 14. Check 'Default task for new console', save settings
 15. Startup -> Choose `{docker-workspace}` under 'Specified named task', save settings

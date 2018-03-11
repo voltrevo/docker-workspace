@@ -1,0 +1,56 @@
+#!/bin/bash -e
+
+trim() {
+  local var="$*"
+  # remove leading whitespace characters
+  var="${var#"${var%%[![:space:]]*}"}"
+  # remove trailing whitespace characters
+  var="${var%"${var##*[![:space:]]}"}"   
+  echo -n "$var"
+}
+
+function dw_rm() {
+  docker volume rm "dw-$1" >/dev/null
+}
+
+function dw_create() {
+  docker run -w "/root/$1" -it --rm -v docker-workspace-share:/root/.config/docker-workspace -v "dw-$1:/root/$1" docker-workspace tmux -u
+}
+
+function dw_ls() {
+  docker volume ls | grep -o 'dw-[a-zA-Z_-]*' | sed 's/^dw-//'
+}
+
+if [ $# -ge 1 ]; then
+  CMD=$(trim $1)
+
+  if [ $CMD == "ls" ]; then
+    dw_ls
+    exit 0
+  fi
+
+  if [ $CMD == "rm" ]; then
+    dw_rm $2
+    exit 0
+  fi
+
+  if [ $CMD == "create" ]; then
+    dw_create $2
+    exit 0
+  fi
+fi
+
+if [ $# -ne 0 ]; then
+  echo Unrecognized command 1>&2
+  exit 1
+fi
+
+echo "Current workspaces:"
+dw_ls
+
+echo "Enter workspace to use (can be new):"
+read workspace
+
+# TODO: User in interactive mode should be able to enter `rm test` to remove test and restart
+
+dw_create $workspace

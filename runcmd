@@ -1,1 +1,1 @@
-docker run -it --rm -v docker-workspace-share:/root/.config/docker-workspace -v workspaces:/root/workspaces docker-workspace /bin/zsh
+docker run -it -p 3080:80 -p 3022:22 -v docker-workspace-share:/root/.config/docker-workspace -v workspaces:/root/workspaces docker-workspace zsh

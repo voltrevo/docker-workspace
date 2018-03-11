@@ -1,6 +1,5 @@
 # TODOs
 
-- Proper README.md
 - vim git gutter
 - jump to typescript errors in project
 - autocomplete

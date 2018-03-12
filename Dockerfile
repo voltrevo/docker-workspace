@@ -11,10 +11,13 @@ RUN apt-get install -y \
     tmux \
     default-jdk
 
+RUN apt-get install -y \
+    haskell-platform
+
 ADD ./docker-workspace-init.sh /tmp/.
 RUN /tmp/docker-workspace-init.sh
 
 ADD .vimrc /root/.vimrc
-ADD .zshrc /root/.zshrc
-
 RUN vim +PlugInstall +qall
+
+ADD .zshrc /root/.zshrc

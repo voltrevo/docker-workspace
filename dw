@@ -14,7 +14,7 @@ function dw_rm() {
 }
 
 function dw_create() {
-  docker run -w "/root/$1" -it --rm -v docker-workspace-share:/root/.config/docker-workspace -v "dw-$1:/root/$1" docker-workspace tmux -u
+  docker run -w "/root/$1" -it --rm -v docker-workspace-share:/root/.config/docker-workspace -v "dw-$1:/root/$1" -e TERM=xterm-256color docker-workspace tmux -u
 }
 
 function dw_ls() {

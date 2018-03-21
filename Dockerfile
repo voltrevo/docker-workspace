@@ -12,7 +12,8 @@ RUN apt-get install -y \
     default-jdk
 
 RUN apt-get install -y \
-    haskell-platform
+    haskell-platform \
+    mono-devel
 
 ADD ./docker-workspace-init.sh /tmp/.
 RUN /tmp/docker-workspace-init.sh

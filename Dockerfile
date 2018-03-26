@@ -8,12 +8,14 @@ RUN apt-get install -y \
     git \
     vim \
     zsh \
-    tmux \
-    default-jdk
+    tmux
 
 RUN apt-get install -y \
     haskell-platform \
     mono-devel
+
+RUN apt-get install -y \
+    default-jdk
 
 ADD ./docker-workspace-init.sh /tmp/.
 RUN /tmp/docker-workspace-init.sh

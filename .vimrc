@@ -66,3 +66,4 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 hi Normal ctermbg=0
+set colorcolumn=80

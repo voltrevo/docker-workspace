@@ -64,3 +64,5 @@ let g:ale_fix_on_save = 1
 let g:ale_set_highlights = 0
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+hi Normal ctermbg=0

@@ -46,6 +46,7 @@ Plug 'dracula/vim'
 Plug 'schickling/vim-bufonly'
 Plug 'w0rp/ale'
 Plug 'leafgarland/typescript-vim'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 silent! colorscheme dracula

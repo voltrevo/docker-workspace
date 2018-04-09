@@ -67,3 +67,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 hi Normal ctermbg=0
 set colorcolumn=80
+
+" Use autoindent ONLY
+autocmd FileType * set nosmartindent|set nocindent

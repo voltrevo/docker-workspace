@@ -1,7 +1,10 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt update
+
+RUN printf "Australia\nSydney\n" | apt install tzdata
+
+RUN apt install -y \
     build-essential \
     curl \
     wget \
@@ -10,7 +13,7 @@ RUN apt-get install -y \
     zsh \
     tmux
 
-RUN apt-get install -y \
+RUN apt install -y \
     haskell-platform \
     mono-devel \
     pkg-config \
@@ -20,7 +23,7 @@ RUN apt-get install -y \
     unzip \
     python
 
-RUN apt-get install -y \
+RUN apt install -y \
     default-jdk
 
 ADD ./docker-workspace-init.sh /tmp/.

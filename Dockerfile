@@ -12,7 +12,13 @@ RUN apt-get install -y \
 
 RUN apt-get install -y \
     haskell-platform \
-    mono-devel
+    mono-devel \
+    pkg-config \
+    zip \
+    g++ \
+    zlib1g-dev \
+    unzip \
+    python
 
 RUN apt-get install -y \
     default-jdk
